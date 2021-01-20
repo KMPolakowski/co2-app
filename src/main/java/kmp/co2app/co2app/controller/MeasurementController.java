@@ -25,18 +25,28 @@ public class MeasurementController {
 
     @GetMapping
     public ResponseEntity<List<MeasurementDTO>> getMeasurements(Principal principal, @PathVariable String districtName) {
-        return measurementsGetter.getMeasurementsFor(principal.getName(), districtName);
+        return new ResponseEntity<List<MeasurementDTO>>(
+                measurementsGetter.getMeasurementsFor(
+                        principal.getName(),
+                        districtName
+                ),
+                HttpStatus.OK
+        );
     }
 
     @PostMapping
     public ResponseEntity<MeasurementDTO> addMeasurement(
             Principal principal,
             @RequestBody MeasurementDTO measurementDTO,
-            @PathVariable  String districtName
+            @PathVariable String districtName
     ) {
-        System.out.println(principal.getName());
         return new ResponseEntity<MeasurementDTO>(
-                measurementSaver.saveMeasurementForCityHallAndDistrict(measurementDTO, principal.getName(), districtName),
-                HttpStatus.CREATED);
+                measurementSaver.saveMeasurementForCityHallAndDistrict(
+                        measurementDTO,
+                        principal.getName(),
+                        districtName
+                ),
+                HttpStatus.CREATED
+        );
     }
 }

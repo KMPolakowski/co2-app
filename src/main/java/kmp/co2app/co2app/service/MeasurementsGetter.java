@@ -10,5 +10,5 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface MeasurementsGetter {
-    ResponseEntity<List<MeasurementDTO>> getMeasurementsFor(String cityName, String districtName);
+    List<MeasurementDTO> getMeasurementsFor(String cityName, String districtName);
 }

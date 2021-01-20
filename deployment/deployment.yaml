@@ -18,7 +18,7 @@ spec:
         app: co2-app
     spec:
       containers:
-      - image: kmpolakowski/co2-app-service
+      - image: kmpolakowski/co2-app:latest
         name: co2-app-service
         resources: {}
 status: {}

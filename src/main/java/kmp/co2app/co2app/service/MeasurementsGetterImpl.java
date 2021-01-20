@@ -24,13 +24,14 @@ public class MeasurementsGetterImpl implements MeasurementsGetter {
     }
 
     @Override
-    public ResponseEntity<List<MeasurementDTO>> getMeasurementsFor(String cityHallName, String districtName) {
+    public List<MeasurementDTO> getMeasurementsFor(String cityHallName, String districtName) {
         List<MeasurementDTO> measurements = measurementRepository
                 .findByCityHallCityNameAndDistrictName(cityHallName, districtName)
                 .stream()
                 .map(measurementMapper::measurementToMeasurementDTO)
                 .collect(Collectors.toList());
 
-        return new ResponseEntity<List<MeasurementDTO>>(measurements, HttpStatus.OK);
+        return measurements;
     }
 }
+
