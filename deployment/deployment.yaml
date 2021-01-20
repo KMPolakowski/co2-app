@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: co2-app
+  name: co2-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: co2-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: co2-app
+    spec:
+      containers:
+      - image: kmpolakowski/co2-app-service
+        name: co2-app-service
+        resources: {}
+status: {}
