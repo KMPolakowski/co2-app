@@ -1,6 +1,5 @@
-# Curl Examples
 
-## API Spec
+# API Spec
 
 `GET /api/v1/districts/{districtName}/measurements`
 
@@ -10,6 +9,7 @@
     "createdAt": "{timestamp}" (string)
 }`
 
+# Curl Examples
 
 ## POST Measurement
 `` curl --header "Content-Type: application/json" 
