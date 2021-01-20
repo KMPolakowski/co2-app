@@ -16,6 +16,9 @@
  * barcelona:burito
  * munich:frankfurter
 
+# Service is publicly reachable at http://104.154.154.120
+
 # HOW TO DEPLOY LOCALLY (PORT 8080)
 
 ``./mvnw spring-boot:run``
+
